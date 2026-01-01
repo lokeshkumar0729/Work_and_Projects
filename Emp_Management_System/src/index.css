@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.h6{
+color: #1f1f01;
+}
+#data::-webkit-scrollbar{
+display: none;
+}
+body::-webkit-scrollbar{
+display: none;
+}
+#tasks::-webkit-scrollbar{
+display: none;
+}
+#over::-webkit-scrollbar{
+display: none;
+}
