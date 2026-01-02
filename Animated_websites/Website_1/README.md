@@ -27,7 +27,7 @@ This project focuses on smooth animations, clean UI, and interactive user experi
 A screen recording of the website is available here:
 
 📂 **Website_Recording**  
-▶️ [LAZAREV Website Demo](Website_Recording/LAZAREV_website.mp4)
+▶️ [LAZAREV Website Demo](https://drive.google.com/drive/folders/1x6RSS3DXh3Uykw2zZ91YB-gGcU1AApcM)
 
 _(Click to download or view)_
 
