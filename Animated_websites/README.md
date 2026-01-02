@@ -27,7 +27,7 @@ It focuses on smooth scrolling, clean UI, and elegant animations.
 ## 🎥 Demo Video
 
 Watch the project demo here:  
-▶️ [LAZAREV Website Demo](Website_1/Website_Recording/Website_Recording/LAZAREEV_website.mp4)
+▶️ [LAZAREV Website Demo](https://drive.google.com/drive/folders/1x6RSS3DXh3Uykw2zZ91YB-gGcU1AApcM)
 
 ---
 
@@ -46,7 +46,7 @@ This project showcases advanced layout techniques and animation flow.
 ## 🎥 Demo Video
 
 Watch the project demo here:  
-▶️ [SUNDOWN Website Demo](Website_2/Website_Recording/Website_Recording/Sundown_website.mp4)
+▶️ [SUNDOWN Website Demo](https://drive.google.com/drive/folders/1x6RSS3DXh3Uykw2zZ91YB-gGcU1AApcM)
 
 ---
 
@@ -84,6 +84,3 @@ Animated_websites/
 │ └── README.md
 │
 └── README.md
-
-yaml
-Copy code
