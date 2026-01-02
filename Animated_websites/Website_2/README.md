@@ -22,19 +22,10 @@ The project demonstrates advanced front-end layout skills and animation concepts
 
 ---
 
-## 🌐 Live Demo
-
-👉 **Live Website:**  
-https://your-username.github.io/Website_2/
-
-_(Replace with your actual deployed link)_
-
----
-
 ## 🎥 Demo Video
 
 Watch the project demo here:  
-▶️ [SUNDOWN Website Demo](Website_Recording/Website_Recording/Sundown_website.mp4)
+▶️ [SUNDOWN Website Demo](https://drive.google.com/drive/folders/1x6RSS3DXh3Uykw2zZ91YB-gGcU1AApcM)
 
 ---
 
