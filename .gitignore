@@ -1,0 +1,6 @@
+# Ignore website recordings
+Website_Recording/
+Animated_websites/**/Website_Recording/
+
+# Ignore large media files
+*.mp4
