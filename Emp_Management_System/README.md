@@ -4,9 +4,13 @@ A modern **Employee Management System** built with **React**, **Context API**, *
 This project supports **Admin & Employee roles**, task assignment, task tracking, and status management with a clean UI.
 
 ---
+### 🔗 Live Demo
 
+**[🚀 Open Employee Management System](https://employeemanagement-msntq50xk-lokesh-ce6f.vercel.app/)**
+
+> Frontend deployed on Vercel
 ## 🚀 Features
-
+---
 ### 🔐 Authentication
 
 - Admin & Employee login
