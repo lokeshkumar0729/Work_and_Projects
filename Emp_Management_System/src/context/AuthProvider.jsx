@@ -6,22 +6,17 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-  console.log("AUTH PROVIDER STARTED");
+ useEffect(() => {
+  alert("AUTH PROVIDER IS RUNNING");
 
-  let { empdata, admindata } = getLocalStorage();
+  setLocalStorage();
 
-  console.log("BEFORE:", empdata, admindata);
+  alert("LOCAL STORAGE SET");
 
-  if (!empdata || !admindata) {
-    console.log("CREATING LOCAL STORAGE");
+  const { empdata, admindata } = getLocalStorage();
 
-    setLocalStorage();
-
-    ({ empdata, admindata } = getLocalStorage());
-
-    console.log("AFTER:", empdata, admindata);
-  }
+  console.log("EMP DATA:", empdata);
+  console.log("ADMIN DATA:", admindata);
 
   setUserData({ empdata, admindata });
 }, []);
