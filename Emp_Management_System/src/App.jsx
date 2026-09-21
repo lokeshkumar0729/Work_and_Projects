@@ -15,60 +15,100 @@ const App = () => {
   // }, []);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("loggedInUser");
-    if (storedUser) {
-      const parsed = JSON.parse(storedUser);
-      setUser({ role: parsed.role });
+  const storedUser = localStorage.getItem("loggedInUser");
 
-      if (parsed.role === "employee") {
-        setLoggedInUserData(parsed.data);
-      }
+  if (!storedUser) return;
+
+  try {
+    const parsed = JSON.parse(storedUser);
+
+    setUser({
+      role: parsed.role,
+      email: parsed.email,
+    });
+
+    if (parsed.role === "employee") {
+      setLoggedInUserData(parsed.data);
     }
-  }, []);
+  } catch (error) {
+    console.error("Invalid stored user:", error);
+    localStorage.removeItem("loggedInUser");
+  }
+}, []);
 
   const handleLogin = (email, password, rememberMe) => {
-    if (
-      !userData ||
-      !Array.isArray(userData.admindata) ||
-      !Array.isArray(userData.empdata)
-    ) {
-      console.log("UserData not ready:", userData);
-      return;
+  if (
+    !userData ||
+    !Array.isArray(userData.admindata) ||
+    !Array.isArray(userData.empdata)
+  ) {
+    console.log("UserData not ready:", userData);
+    return;
+  }
+
+  // =========================
+  // ADMIN LOGIN
+  // =========================
+
+  const admin = userData.admindata.find(
+    (e) => e.email === email && e.password === password
+  );
+
+  if (admin) {
+    const data = {
+      role: "admin",
+      email: admin.email,
+    };
+
+    setUser(data);
+
+    if (rememberMe) {
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify(data)
+      );
     }
 
-    // ADMIN LOGIN
-    const admin = userData.admindata.find(
-      (e) => e.email === email && e.password === password
-    );
+    return;
+  }
 
-    if (admin) {
-      const data = { role: "admin" };
-      setUser(data);
+  // =========================
+  // EMPLOYEE LOGIN
+  // =========================
 
-      if (rememberMe) {
-        localStorage.setItem("loggedInUser", JSON.stringify(data));
-      }
-      return;
+  const emp = userData.empdata.find(
+    (e) => e.email === email && e.password === password
+  );
+
+  if (emp) {
+    // Remove password before storing employee data
+    const { password: _, ...employeeWithoutPassword } = emp;
+
+    const data = {
+      role: "employee",
+      email: emp.email,
+      data: employeeWithoutPassword,
+    };
+
+    setUser({
+      role: "employee",
+      email: emp.email,
+    });
+
+    setLoggedInUserData(employeeWithoutPassword);
+
+    if (rememberMe) {
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify(data)
+      );
     }
 
-    // EMPLOYEE LOGIN
-    const emp = userData.empdata.find(
-      (e) => e.email === email && e.password === password
-    );
+    return;
+  }
 
-    if (emp) {
-      const data = { role: "employee", data: emp };
-      setUser({ role: "employee" });
-      setLoggedInUserData(emp);
-
-      if (rememberMe) {
-        localStorage.setItem("loggedInUser", JSON.stringify(data));
-      }
-      return;
-    }
-
-    alert("Invalid Credentials");
-  };
+  alert("Invalid Credentials");
+};
 
   return (
     <div>
