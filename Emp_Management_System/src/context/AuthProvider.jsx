@@ -7,19 +7,25 @@ const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Check if employee/admin data already exists
-    let { empdata, admindata } = getLocalStorage();
+  console.log("AUTH PROVIDER STARTED");
 
-    // If data doesn't exist, create it first
-    if (!empdata || !admindata) {
-      setLocalStorage();
+  let { empdata, admindata } = getLocalStorage();
 
-      // Read the newly created data
-      ({ empdata, admindata } = getLocalStorage());
-    }
+  console.log("BEFORE:", empdata, admindata);
 
-    setUserData({ empdata, admindata });
-  }, []);
+  if (!empdata || !admindata) {
+    console.log("CREATING LOCAL STORAGE");
+
+    setLocalStorage();
+
+    ({ empdata, admindata } = getLocalStorage());
+
+    console.log("AFTER:", empdata, admindata);
+  }
+
+  setUserData({ empdata, admindata });
+}, []);
+  
 
   return (
     <AuthContext.Provider value={[userData, setUserData]}>
