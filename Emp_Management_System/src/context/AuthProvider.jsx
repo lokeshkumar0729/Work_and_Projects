@@ -1,32 +1,13 @@
-import React, { useEffect, useState, createContext } from "react";
-import { getLocalStorage, setLocalStorage } from "../Utils/LocalStorage";
+import React, { useState, createContext } from "react";
+import { employee, admin } from "../Utils/LocalStorage";
 
 export const AuthContext = createContext();
+
 const AuthProvider = ({ children }) => {
-  alert("NEW AUTH PROVIDER CODE");
-
-  const [userData, setUserData] = useState(null);
-
-useEffect(() => {
-  alert("AUTH PROVIDER IS RUNNING");
-
-  console.log("localStorage BEFORE:", localStorage);
-
-  setLocalStorage();
-
-  console.log("localStorage AFTER:", localStorage);
-
-  console.log("employee:", localStorage.getItem("employee"));
-  console.log("admin:", localStorage.getItem("admin"));
-
-  const { empdata, admindata } = getLocalStorage();
-
-  console.log("EMP DATA:", empdata);
-  console.log("ADMIN DATA:", admindata);
-
-  setUserData({ empdata, admindata });
-}, []);
-  
+  const [userData, setUserData] = useState({
+    empdata: employee,
+    admindata: admin,
+  });
 
   return (
     <AuthContext.Provider value={[userData, setUserData]}>
