@@ -2,8 +2,9 @@ import React, { useEffect, useState, createContext } from "react";
 import { getLocalStorage, setLocalStorage } from "../Utils/LocalStorage";
 
 export const AuthContext = createContext();
-
 const AuthProvider = ({ children }) => {
+  alert("NEW AUTH PROVIDER CODE");
+
   const [userData, setUserData] = useState(null);
 
 useEffect(() => {
