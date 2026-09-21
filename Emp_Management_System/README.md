@@ -6,7 +6,7 @@ This project supports **Admin & Employee roles**, task assignment, task tracking
 ---
 ### 🔗 Live Demo
 
-**[🚀 Open Employee Management System](https://employeemanagement-msntq50xk-lokesh-ce6f.vercel.app/)**
+**[🚀 Open Employee Management System](https://employeemanagement-kappa-three.vercel.app/)**
 
 > Frontend deployed on Vercel
 ## 🚀 Features
